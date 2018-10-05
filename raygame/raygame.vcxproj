@@ -133,10 +133,12 @@
   <ItemGroup>
     <ClCompile Include="bomb.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="pickups.cpp" />
     <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bomb.h" />
+    <ClInclude Include="pickups.h" />
     <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

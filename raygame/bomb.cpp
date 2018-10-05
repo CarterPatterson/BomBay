@@ -31,3 +31,26 @@ void Bomb::setState(int count) {
 int Bomb::getState() {
 	return state;
 }
+
+void Bomb::countdown() {
+	if (timer <= 0) {
+		explode();
+	}
+	timer--;
+}
+
+void Bomb::explode() {
+	state = 3;
+	DrawCircleV(position, 49, RED);
+	for (int i = 0; i < explosionRadius; i++) {
+		DrawCircleV({ position.x + i * 100, position.y }, (49 - 5) / (i + 1), RED);
+		DrawCircleV({ position.x - i * 100, position.y }, (49 - 5) / (i + 1), RED);
+		DrawCircleV({ position.x, position.y - i * 100 }, (49 - 5) / (i + 1), RED);
+		DrawCircleV({ position.x, position.y + i * 100 }, (49 - 5) / (i + 1), RED);
+	}
+	explosionLifeTimer++;
+	if (explosionLifeTimer >= 50) {
+		state = 1;
+		explosionLifeTimer = 0;
+	}
+}

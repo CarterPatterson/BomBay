@@ -1,5 +1,5 @@
 #include"player.h"
-#include"bomb.h"
+#include "bomb.h"
 
 void Player::setBombs(int count) {
 	bombs = count;
@@ -21,12 +21,13 @@ void Player::setPlayerPosition(Vector2 pos) {
 
 void Player::placeBomb(Bomb* bombArr) {
 	if (bombs > 0) {
-		bombs--;
-		for (int i = 0; i < bombs; i++) {
+		for (int i = 0; i < 3; i++) {
 			if (bombArr[i].getState() == 1) {
 				bombArr[i].setState(2);
 				bombArr[i].setPosition(position);
-				bombArr[i].setTimer(240);
+				bombArr[i].setExplosionRadius(radius);
+				bombArr[i].setTimer(180);
+				bombs--;
 				break;
 			}
 		}

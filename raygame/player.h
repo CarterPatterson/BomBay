@@ -5,7 +5,7 @@ class Player {
 private:
 	Vector2 position;
 	int bombs;
-
+	int radius = 5;
 
 public:
 	void setBombs(int);
