@@ -6,5 +6,5 @@ private:
 	int type;
 
 public:
-
+	void spawnPickup();
 };

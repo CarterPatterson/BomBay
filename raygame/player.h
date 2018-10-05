@@ -5,9 +5,10 @@ class Player {
 private:
 	Vector2 position;
 	int bombs;
-	int radius = 5;
+	bool playerAlive;
 
 public:
+	int radius = 2;
 	void setBombs(int);
 	void addBombs(int);
 	int getBombs();
@@ -15,4 +16,7 @@ public:
 	Vector2 getPlayerPosition();
 	void placeBomb(class Bomb*);
 	void movePlayer(int, int);
+	void iterateRadius();
+	void setPlayerAlive(bool);
+	bool getPlayerAlive();
 };

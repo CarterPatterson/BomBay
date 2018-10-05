@@ -38,3 +38,15 @@ void Player::movePlayer(int x, int y) {
 	position.x += x*100;
 	position.y += y*100;
 }
+
+void Player::iterateRadius() {
+	radius++;
+}
+
+void Player::setPlayerAlive(bool val) {
+	playerAlive = val;
+}
+
+bool Player::getPlayerAlive() {
+	return playerAlive;
+}
